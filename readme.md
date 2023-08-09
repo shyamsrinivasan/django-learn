@@ -29,4 +29,5 @@ To see the SQL commands executed by the `migrate` command, run `python manage.py
 	              'DIRS': [ PROJECT_DIR / 'jinjatemplates' ],
                 'APP_DIRS': True,
                 },
-              ]```
+              ]
+  ```
