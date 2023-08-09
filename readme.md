@@ -15,4 +15,4 @@ To see the SQL commands executed by the `migrate` command, run `python manage.py
 3. Add newapp URLConf to myapp/urls.py using `path` and `include` to include urls as URLConfs: `path('url_path', include('newapp.urls'))`
 
 # To add an app to a Django project
-- In myapp/settings.py add 'newapp.apps.NewappConfig' to list `INSTALLED_APPS`
+- In myapp/settings.py add `'newapp.apps.NewappConfig'` to list `INSTALLED_APPS`
