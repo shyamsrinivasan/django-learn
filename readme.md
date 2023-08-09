@@ -9,17 +9,17 @@ This will create a newapp dirctory (initialized as a python package) with all re
 6. After defining all models for `newapp` in `newapp.models.py`, run `python manage.py makemigrations newapp` to create/change database models.
 To see the SQL commands executed by the `migrate` command, run `python manage.py sqlmigrate poll xxx`
 
-# Steps to follow to add app URLs to a Django project
+## Steps to follow to add app URLs to a Django project
 1. Create views (class-based or function-based) in newapp/views.py
 2. Add url patterns to newapp/urls.py using `path('url_path', view_function, name='url_pattern_name')`. This will be newapp's URLConf.
 3. Add newapp URLConf to myapp/urls.py using `path` and `include` to include urls as URLConfs: `path('url_path', include('newapp.urls'))`
 
-# To add an app to a Django project
+## To add an app to a Django project
 - In myapp/settings.py add `'newapp.apps.NewappConfig'` to list `INSTALLED_APPS`
 
 ## Add Jinja2 templating engine to Django (in addition to Django templating engine)
 - Add a dictionary to app/settings.py in `TEMPLATES` list for enabling access to jinja templating engine from django
-  '
+  `
   from pathlib import Path
 
   BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,4 +29,4 @@ To see the SQL commands executed by the `migrate` command, run `python manage.py
 	              'DIRS': [ PROJECT_DIR / 'jinjatemplates' ],
                 'APP_DIRS': True,
                 },
-              ]'
+              ]`
