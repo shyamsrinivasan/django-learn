@@ -16,3 +16,17 @@ To see the SQL commands executed by the `migrate` command, run `python manage.py
 
 # To add an app to a Django project
 - In myapp/settings.py add `'newapp.apps.NewappConfig'` to list `INSTALLED_APPS`
+
+## Add Jinja2 templating engine to Django (in addition to Django templating engine)
+- Add a dictionary to app/settings.py in `TEMPLATES` list for enabling access to jinja templating engine from django
+  '
+  from pathlib import Path
+
+  BASE_DIR = Path(__file__).resolve().parent.parent
+  PROJECT_DIR = Path(__file__).resolve().parent
+  
+  TEMPLATES = [{'BACKEND':'django.template.backends.jinja2.Jinja2',
+	              'DIRS': [ PROJECT_DIR / 'jinjatemplates' ],
+                'APP_DIRS': True,
+                },
+              ]'
